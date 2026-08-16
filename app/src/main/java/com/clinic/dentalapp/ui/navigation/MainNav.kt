@@ -1,10 +1,12 @@
 package com.clinic.dentalapp.ui.navigation
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -60,7 +62,7 @@ fun MainNav(repository: ClinicRepository, onLogout: () -> Unit) {
         NavHost(
             navController = navController,
             startDestination = Screen.Patients.route,
-            modifier = androidx.compose.ui.Modifier.padding(padding)
+            modifier = Modifier.padding(padding)
         ) {
             composable(Screen.Patients.route) {
                 PatientsScreen(repository) { patientId ->
